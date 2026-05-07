@@ -1,6 +1,6 @@
 # Instruments API
 
-A mock REST API built using VS Code, Postman, and json-server; it manages a catalog of musical instruments. This project demonstrates API design, CRUD operations, and hands-on use of Postman for endpoint testing and documentation.
+A mock REST API built using Visual Studio Code, Postman, and json-server; it manages a catalog of musical instruments. This project demonstrates API design, CRUD operations, and hands-on use of Postman for endpoint testing and documentation.
 
 -----
 
