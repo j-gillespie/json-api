@@ -1,14 +1,14 @@
 {
   "instruments": [
-    {
+     {
       "id": "1",
       "instrument": "bass",
       "brand": "Fender",
       "model": "Jazz Bass",
       "year": "1985",
       "type": "electric, guitar"
-    },
-    {
+    },   
+	{
       "id": "2",
       "instrument": "bass",
       "brand": "MusicMan",
@@ -140,15 +140,9 @@
       "brand": "Fender",
       "model": "Telecaster",
       "year": "1972",
-      "type": "electric"
-    },
-    {
-      "id": "e23e",
-      "instrument": "guitar",
-      "brand": "Fender",
-      "model": "Telecaster",
-      "year": "1972",
-      "type": "electric"
+      "type": [
+        "electric"
+      ]
     }
   ]
 }

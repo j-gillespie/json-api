@@ -1,0 +1,351 @@
+{
+  "info": {
+    "_postman_id": "9beb0f0c-0412-44cc-b625-65eb66dfbe9d",
+    "name": "Instruments",
+    "description": "This collection contains HTTP methods for a mock REST API that manages a detailed list of musical instruments. The API is powered by json-server and uses a local JSON file (db.json) as a datastore.\n\nAvailable requests demonstrate standard create, read, update, and delete (CRUD) operations, and include GET, POST, PUT, PATCH, and DELETE, along with customizable query and sorting options.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List All Instruments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/instruments",
+          "host": ["{{base_url}}"],
+          "path": ["instruments"]
+        },
+        "description": "Retrieve data for all instruments in the datastore, including ID, instrument, brand, model, year, and type."
+      },
+      "response": [
+        {
+          "name": "List All Instruments",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/instruments",
+              "host": ["{{base_url}}"],
+              "path": ["instruments"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            { "key": "Content-Type", "value": "application/json" }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"1\",\n        \"instrument\": \"bass\",\n        \"brand\": \"Fender\",\n        \"model\": \"Jazz Bass\",\n        \"year\": \"1985\",\n        \"type\": [\n            \"electric\",\n            \"guitar\"\n        ]\n    },\n    {\n        \"id\": \"2\",\n        \"instrument\": \"bass\",\n        \"brand\": \"MusicMan\",\n        \"model\": \"StingRay\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"electric\",\n            \"guitar\"\n        ]\n    },\n    {\n        \"id\": \"3\",\n        \"instrument\": \"bass\",\n        \"brand\": \"Kay\",\n        \"model\": \"M1-B\",\n        \"year\": \"1963\",\n        \"type\": [\n            \"acoustic\",\n            \"upright\",\n            \"3/4-size\"\n        ]\n    },\n    {\n        \"id\": \"4\",\n        \"instrument\": \"bass\",\n        \"brand\": \"Kala\",\n        \"model\": \"U-Bass\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"acoustic\",\n            \"electric\",\n            \"ukelele\"\n        ]\n    },\n    {\n        \"id\": \"5\",\n        \"instrument\": \"bass\",\n        \"brand\": \"Michael Kelly\",\n        \"model\": \"Club Deluxe\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"acoustic\",\n            \"electric\",\n            \"guitar\"\n        ]\n    },\n    {\n        \"id\": \"6\",\n        \"instrument\": \"piano\",\n        \"brand\": \"Cable\",\n        \"model\": \"N/A\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"acoustic\",\n            \"upright\",\n            \"spinet\",\n            \"keyboard\"\n        ]\n    },\n    {\n        \"id\": \"7\",\n        \"instrument\": \"piano\",\n        \"brand\": \"Yamaha\",\n        \"model\": \"PSR-E313\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"electric\",\n            \"keyboard\"\n        ]\n    },\n    {\n        \"id\": \"8\",\n        \"instrument\": \"saxophone\",\n        \"brand\": \"Yamaha\",\n        \"model\": \"YAS-62\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"alto\",\n            \"acoustic\"\n        ]\n    },\n    {\n        \"id\": \"9\",\n        \"instrument\": \"saxophone\",\n        \"brand\": \"Jupiter\",\n        \"model\": \"JAS-869\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"alto\",\n            \"acoustic\"\n        ]\n    },\n    {\n        \"id\": \"10\",\n        \"instrument\": \"synthesizer\",\n        \"brand\": \"Roland\",\n        \"model\": \"AE-20\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"wind\",\n            \"electric\"\n        ]\n    },\n    {\n        \"id\": \"11\",\n        \"instrument\": \"melodica\",\n        \"brand\": \"Yamaha\",\n        \"model\": \"P37D\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"acoustic\",\n            \"keyboard\"\n        ]\n    },\n    {\n        \"id\": \"12\",\n        \"instrument\": \"cajon\",\n        \"brand\": \"LP\",\n        \"model\": \"Canyon\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"acoustic\",\n            \"percussion\"\n        ]\n    },\n    {\n        \"id\": \"5060\",\n        \"instrument\": \"guitar\",\n        \"brand\": \"Fender\",\n        \"model\": \"Telecaster\",\n        \"year\": \"1972\",\n        \"type\": [\n            \"electric\"\n        ]\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Add an Instrument",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"instrument\": \"guitar\",\n  \"brand\": \"Fender\",\n  \"model\": \"Telecaster\",\n  \"year\": \"1972\",\n  \"type\": [\"electric\"]\n}",
+          "options": {
+            "raw": { "language": "json" }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/instruments",
+          "host": ["{{base_url}}"],
+          "path": ["instruments"]
+        },
+        "description": "Add a new instrument to the datastore. Include the instrument name as well as attributes such as brand, model, year, and type. The id field is generated automatically by json-server."
+      },
+      "response": [
+        {
+          "name": "Add an Instrument",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"instrument\": \"guitar\",\n  \"brand\": \"Fender\",\n  \"model\": \"Telecaster\",\n  \"year\": \"1972\",\n  \"type\": [\"electric\"]\n}",
+              "options": {
+                "raw": { "language": "json" }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/instruments",
+              "host": ["{{base_url}}"],
+              "path": ["instruments"]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "header": [
+            { "key": "Content-Type", "value": "application/json" }
+          ],
+          "cookie": [],
+          "body": "{\n    \"instrument\": \"guitar\",\n    \"brand\": \"Fender\",\n    \"model\": \"Telecaster\",\n    \"year\": \"1972\",\n    \"type\": [\n        \"electric\"\n    ],\n    \"id\": \"5060\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update an Instrument",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"1\",\n  \"instrument\": \"bass\",\n  \"brand\": \"Fender\",\n  \"model\": \"Jazz Bass\",\n  \"year\": \"1986\",\n  \"type\": [\"electric\", \"guitar\"]\n}",
+          "options": {
+            "raw": { "language": "json" }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/instruments/{{instrument_id}}",
+          "host": ["{{base_url}}"],
+          "path": ["instruments", "{{instrument_id}}"]
+        },
+        "description": "Replace an existing instrument record in full. All fields must be included in the request body. Omitted fields will be removed from the record. The target record is identified by the instrument_id variable."
+      },
+      "response": [
+        {
+          "name": "Update an Instrument",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"1\",\n  \"instrument\": \"bass\",\n  \"brand\": \"Fender\",\n  \"model\": \"Jazz Bass\",\n  \"year\": \"1986\",\n  \"type\": [\"electric\", \"guitar\"]\n}",
+              "options": {
+                "raw": { "language": "json" }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/instruments/{{instrument_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["instruments", "{{instrument_id}}"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            { "key": "Content-Type", "value": "application/json" }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"1\",\n    \"instrument\": \"bass\",\n    \"brand\": \"Fender\",\n    \"model\": \"Jazz Bass\",\n    \"year\": \"1986\",\n    \"type\": [\n        \"electric\",\n        \"guitar\"\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update Instrument Details",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"year\": \"1985\"\n}",
+          "options": {
+            "raw": { "language": "json" }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/instruments/{{instrument_id}}",
+          "host": ["{{base_url}}"],
+          "path": ["instruments", "{{instrument_id}}"]
+        },
+        "description": "Update one or more fields of an existing instrument record without replacing the entire record. Only the fields included in the request body are modified. The target record is identified by the instrument_id variable."
+      },
+      "response": [
+        {
+          "name": "Update Instrument Details",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"year\": \"1985\"\n}",
+              "options": {
+                "raw": { "language": "json" }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/instruments/{{instrument_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["instruments", "{{instrument_id}}"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            { "key": "Content-Type", "value": "application/json" }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"1\",\n    \"instrument\": \"bass\",\n    \"brand\": \"Fender\",\n    \"model\": \"Jazz Bass\",\n    \"year\": \"1985\",\n    \"type\": [\n        \"electric\",\n        \"guitar\"\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete an Instrument",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/instruments/{{instrument_id}}",
+          "host": ["{{base_url}}"],
+          "path": ["instruments", "{{instrument_id}}"]
+        },
+        "description": "Remove an instrument record from the datastore. The target record is identified by the instrument_id variable. This action is permanent and cannot be undone."
+      },
+      "response": [
+        {
+          "name": "Delete an Instrument",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/instruments/{{instrument_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["instruments", "{{instrument_id}}"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            { "key": "Content-Type", "value": "application/json" }
+          ],
+          "cookie": [],
+          "body": "{}"
+        }
+      ]
+    },
+    {
+      "name": "Custom Query",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/instruments?{{field}}={{field_value}}",
+          "host": ["{{base_url}}"],
+          "path": ["instruments"],
+          "query": [
+            { "key": "{{field}}", "value": "{{field_value}}" }
+          ]
+        },
+        "description": "Filter instruments by any field using the field and field_value collection variables. By default, returns all records where instrument equals bass. Update the field and field_value variables to filter by any other field and value."
+      },
+      "response": [
+        {
+          "name": "Custom Query",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/instruments?{{field}}={{field_value}}",
+              "host": ["{{base_url}}"],
+              "path": ["instruments"],
+              "query": [
+                { "key": "{{field}}", "value": "{{field_value}}" }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            { "key": "Content-Type", "value": "application/json" }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"1\",\n        \"instrument\": \"bass\",\n        \"brand\": \"Fender\",\n        \"model\": \"Jazz Bass\",\n        \"year\": \"1985\",\n        \"type\": [\n            \"electric\",\n            \"guitar\"\n        ]\n    },\n    {\n        \"id\": \"2\",\n        \"instrument\": \"bass\",\n        \"brand\": \"MusicMan\",\n        \"model\": \"StingRay\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"electric\",\n            \"guitar\"\n        ]\n    },\n    {\n        \"id\": \"3\",\n        \"instrument\": \"bass\",\n        \"brand\": \"Kay\",\n        \"model\": \"M1-B\",\n        \"year\": \"1963\",\n        \"type\": [\n            \"acoustic\",\n            \"upright\",\n            \"3/4-size\"\n        ]\n    },\n    {\n        \"id\": \"4\",\n        \"instrument\": \"bass\",\n        \"brand\": \"Kala\",\n        \"model\": \"U-Bass\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"acoustic\",\n            \"electric\",\n            \"ukelele\"\n        ]\n    },\n    {\n        \"id\": \"5\",\n        \"instrument\": \"bass\",\n        \"brand\": \"Michael Kelly\",\n        \"model\": \"Club Deluxe\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"acoustic\",\n            \"electric\",\n            \"guitar\"\n        ]\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Sort by Instrument",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/instruments?_sort=instrument&_order=asc",
+          "host": ["{{base_url}}"],
+          "path": ["instruments"],
+          "query": [
+            { "key": "_sort", "value": "instrument" },
+            { "key": "_order", "value": "asc" }
+          ]
+        },
+        "description": "Retrieve all instruments sorted alphabetically by the instrument field in ascending order. Use _order=desc to reverse the sort order."
+      },
+      "response": [
+        {
+          "name": "Sort by Instrument",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/instruments?_sort=instrument&_order=asc",
+              "host": ["{{base_url}}"],
+              "path": ["instruments"],
+              "query": [
+                { "key": "_sort", "value": "instrument" },
+                { "key": "_order", "value": "asc" }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            { "key": "Content-Type", "value": "application/json" }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"1\",\n        \"instrument\": \"bass\",\n        \"brand\": \"Fender\",\n        \"model\": \"Jazz Bass\",\n        \"year\": \"1985\",\n        \"type\": [\n            \"electric\",\n            \"guitar\"\n        ]\n    },\n    {\n        \"id\": \"2\",\n        \"instrument\": \"bass\",\n        \"brand\": \"MusicMan\",\n        \"model\": \"StingRay\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"electric\",\n            \"guitar\"\n        ]\n    },\n    {\n        \"id\": \"3\",\n        \"instrument\": \"bass\",\n        \"brand\": \"Kay\",\n        \"model\": \"M1-B\",\n        \"year\": \"1963\",\n        \"type\": [\n            \"acoustic\",\n            \"upright\",\n            \"3/4-size\"\n        ]\n    },\n    {\n        \"id\": \"4\",\n        \"instrument\": \"bass\",\n        \"brand\": \"Kala\",\n        \"model\": \"U-Bass\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"acoustic\",\n            \"electric\",\n            \"ukelele\"\n        ]\n    },\n    {\n        \"id\": \"5\",\n        \"instrument\": \"bass\",\n        \"brand\": \"Michael Kelly\",\n        \"model\": \"Club Deluxe\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"acoustic\",\n            \"electric\",\n            \"guitar\"\n        ]\n    },\n    {\n        \"id\": \"12\",\n        \"instrument\": \"cajon\",\n        \"brand\": \"LP\",\n        \"model\": \"Canyon\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"acoustic\",\n            \"percussion\"\n        ]\n    },\n    {\n        \"id\": \"5060\",\n        \"instrument\": \"guitar\",\n        \"brand\": \"Fender\",\n        \"model\": \"Telecaster\",\n        \"year\": \"1972\",\n        \"type\": [\n            \"electric\"\n        ]\n    },\n    {\n        \"id\": \"11\",\n        \"instrument\": \"melodica\",\n        \"brand\": \"Yamaha\",\n        \"model\": \"P37D\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"acoustic\",\n            \"keyboard\"\n        ]\n    },\n    {\n        \"id\": \"6\",\n        \"instrument\": \"piano\",\n        \"brand\": \"Cable\",\n        \"model\": \"N/A\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"acoustic\",\n            \"upright\",\n            \"spinet\",\n            \"keyboard\"\n        ]\n    },\n    {\n        \"id\": \"7\",\n        \"instrument\": \"piano\",\n        \"brand\": \"Yamaha\",\n        \"model\": \"PSR-E313\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"electric\",\n            \"keyboard\"\n        ]\n    },\n    {\n        \"id\": \"8\",\n        \"instrument\": \"saxophone\",\n        \"brand\": \"Yamaha\",\n        \"model\": \"YAS-62\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"alto\",\n            \"acoustic\"\n        ]\n    },\n    {\n        \"id\": \"9\",\n        \"instrument\": \"saxophone\",\n        \"brand\": \"Jupiter\",\n        \"model\": \"JAS-869\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"alto\",\n            \"acoustic\"\n        ]\n    },\n    {\n        \"id\": \"10\",\n        \"instrument\": \"synthesizer\",\n        \"brand\": \"Roland\",\n        \"model\": \"AE-20\",\n        \"year\": \"N/A\",\n        \"type\": [\n            \"wind\",\n            \"electric\"\n        ]\n    }\n]"
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "instrument_id",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "key": "field",
+      "value": "instrument",
+      "type": "string"
+    },
+    {
+      "key": "field_value",
+      "value": "bass",
+      "type": "string"
+    }
+  ]
+}
