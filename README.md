@@ -295,7 +295,7 @@ json-api/
 ├── db.json # JSON datastore
 ├── package.json # Project configuration and start script
 ├── .gitignore # Excludes node_modules
-├── Instruments_postman_collection.json # Postman requests for all endpoints
+├── Instruments.postman_collection.json # Postman requests for all endpoints
 └── README.md # Project documentation
 ```
 
